@@ -1,14 +1,15 @@
 version: "3.7"
 services:
   fatura_any:
-    image: marcelogbjunior/fatura-anymarket:0.0.3
+    image: marcelogbjunior/fatura-anymarket:0.0.7
+    network_mode: "host"
     container_name: fatura_any_container
     environment:
-      - NERUS_MYSQL_USER=
-      - NERUS_MYSQL_PSWD=
-      - NERUS_MYSQL_IP=
-      - NERUS_MYSQL_PORT=
-      - NERUS_DBSQL=
+      - DB_HOST=
+      - DB_PORT=3306
+      - DB_USER=
+      - DB_PASS=
+      - DB_NAME=
     ports:
       - 3014
     volumes:
